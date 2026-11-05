@@ -1,0 +1,24 @@
+# Ambiente
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+
+# Segredos
+.env
+
+# Dados que não podem ir para o git
+dados/privado/
+dados/brutos/
+# Questões do ENEM: geradas localmente com `avaliador extrair-enem`. Os textos de apoio
+# têm direitos de terceiros, então o repositório distribui o extrator, não as questões.
+dados/publico/*/enem_*.jsonl
+
+# Resultados (só os publicados vão para o git)
+resultados/*
+!resultados/publicados/
+
+# Kaggle / notebooks
+.ipynb_checkpoints/

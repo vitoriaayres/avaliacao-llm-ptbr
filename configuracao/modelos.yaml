@@ -1,0 +1,23 @@
+# Modelos avaliados. O id segue o LiteLLM: "<provedor>/<modelo do provedor>".
+# data_corte (opcional): fim dos dados de treino informado pelo fabricante; itens com
+# data_referencia posterior não podem ter sido vistos no treino (análise de contaminação).
+parametros_padrao:
+  temperature: 0
+  max_tokens: 2048
+
+modelos:
+  - id: ollama/deepseek-coder:6.7b
+    nome: DeepSeek Coder 6.7B (local)
+
+  - id: groq/openai/gpt-oss-120b
+    nome: GPT-OSS 120B
+    data_corte: 2024-06-01
+
+  - id: groq/openai/gpt-oss-20b
+    nome: GPT-OSS 20B
+    data_corte: 2024-06-01
+
+  - id: groq/qwen/qwen3.8-27b
+    nome: Qwen3.8 27B
+    # Grátis: 1000 tokens de saída por minuto e cerca de 600 por resposta.
+    requisicoes_por_minuto: 1

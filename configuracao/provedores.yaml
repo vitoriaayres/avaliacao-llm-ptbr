@@ -1,0 +1,35 @@
+# Limites do plano gratuito de cada provedor. O nome é o prefixo do modelo no LiteLLM.
+# treina_com_dados: o provedor pode usar as chamadas para treinar modelos. Itens privados
+# (held-out) nunca vão para esses provedores, senão deixam de ser privados.
+provedores:
+  ollama:
+    treina_com_dados: false
+
+  groq:
+    variavel_chave: GROQ_API_KEY
+    requisicoes_por_minuto: 30
+    requisicoes_por_dia: 1000
+    treina_com_dados: false
+
+  gemini:
+    variavel_chave: GEMINI_API_KEY
+    requisicoes_por_minuto: 10
+    requisicoes_por_dia: 250
+    treina_com_dados: true
+
+  openrouter:
+    variavel_chave: OPENROUTER_API_KEY
+    requisicoes_por_minuto: 20
+    requisicoes_por_dia: 50
+    treina_com_dados: true
+
+  mistral:
+    variavel_chave: MISTRAL_API_KEY
+    requisicoes_por_minuto: 60
+    treina_com_dados: true
+
+  github:
+    variavel_chave: GITHUB_TOKEN
+    requisicoes_por_minuto: 10
+    requisicoes_por_dia: 50
+    treina_com_dados: false

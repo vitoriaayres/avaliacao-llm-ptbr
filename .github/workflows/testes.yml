@@ -1,0 +1,27 @@
+name: testes
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python: ["3.11", "3.13"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+      - name: Instalar
+        run: pip install -e ".[dev,painel,ferramentas]"
+      - name: Lint
+        run: ruff check avaliador testes painel
+      - name: Testes
+        run: pytest -q
+      - name: Dataset válido
+        run: avaliador validar

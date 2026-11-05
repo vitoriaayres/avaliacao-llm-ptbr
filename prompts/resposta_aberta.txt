@@ -1,0 +1,3 @@
+{texto_base}{enunciado}
+
+Responda em português do Brasil, de forma direta e correta.

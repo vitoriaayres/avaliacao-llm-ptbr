@@ -1,0 +1,6 @@
+{texto_base}{enunciado}
+
+Opções: {rotulos}
+
+Escolha uma única opção. Você pode raciocinar antes, mas termine a resposta com uma linha exatamente neste formato:
+Resposta: <opção>

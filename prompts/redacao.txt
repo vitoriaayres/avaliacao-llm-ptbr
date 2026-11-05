@@ -1,0 +1,3 @@
+Tema: {enunciado}
+
+{texto_base}Escreva uma redação dissertativo-argumentativa em português do Brasil, na norma-padrão, com 20 a 30 linhas e uma proposta de intervenção detalhada. Responda apenas com o texto da redação.

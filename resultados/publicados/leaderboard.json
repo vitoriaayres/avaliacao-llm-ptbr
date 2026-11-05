@@ -1,0 +1,52 @@
+{
+  "gerado_em": "2026-11-05T12:55:56+00:00",
+  "execucao": "enem-2024",
+  "itens_por_categoria": {
+    "conhecimento": 40,
+    "interpretacao": 33
+  },
+  "modelos": [
+    {
+      "posicao": 1,
+      "modelo": "groq/qwen/qwen3.8-27b",
+      "nome": "Qwen3.8 27B",
+      "geral": 0.9697,
+      "ic_inferior": 0.9242,
+      "ic_superior": 1.0,
+      "n_itens": 73,
+      "empata_com_lider": true,
+      "categorias": {
+        "conhecimento": 1.0,
+        "interpretacao": 0.9394
+      }
+    },
+    {
+      "posicao": 2,
+      "modelo": "groq/openai/gpt-oss-120b",
+      "nome": "GPT-OSS 120B",
+      "geral": 0.9394,
+      "ic_inferior": 0.8788,
+      "ic_superior": 0.9848,
+      "n_itens": 73,
+      "empata_com_lider": true,
+      "categorias": {
+        "conhecimento": 1.0,
+        "interpretacao": 0.8788
+      }
+    },
+    {
+      "posicao": 3,
+      "modelo": "groq/openai/gpt-oss-20b",
+      "nome": "GPT-OSS 20B",
+      "geral": 0.8966,
+      "ic_inferior": 0.8208,
+      "ic_superior": 0.9572,
+      "n_itens": 73,
+      "empata_com_lider": true,
+      "categorias": {
+        "conhecimento": 0.975,
+        "interpretacao": 0.8182
+      }
+    }
+  ]
+}

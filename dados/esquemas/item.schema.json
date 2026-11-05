@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "item.schema.json",
+  "title": "Item do benchmark de LLMs em português brasileiro",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "categoria", "formato", "enunciado", "fonte", "data_referencia"],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "description": "Minúsculas, números e hífens. Ex.: conhecimento-enem2025-042"
+    },
+    "categoria": {
+      "enum": [
+        "conhecimento",
+        "brasil_pratico",
+        "cultura",
+        "pragmatica",
+        "interpretacao",
+        "escrita",
+        "vies_regional"
+      ]
+    },
+    "formato": {
+      "enum": ["multipla_escolha", "classificacao", "resposta_aberta", "redacao"]
+    },
+    "enunciado": { "type": "string", "minLength": 1 },
+    "fonte": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Origem do item. Ex.: INEP - ENEM 2025, autoria própria"
+    },
+    "data_referencia": {
+      "type": "string",
+      "format": "date",
+      "description": "Data em que o conteúdo foi publicado (AAAA-MM-DD). Usada para analisar contaminação."
+    },
+    "texto_base": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Texto de apoio: crônica, notícia, textos motivadores da redação."
+    },
+    "alternativas": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["letra", "texto"],
+        "properties": {
+          "letra": { "type": "string", "pattern": "^[A-Z]$" },
+          "texto": { "type": "string", "minLength": 1 }
+        }
+      }
+    },
+    "rotulos": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 }
+    },
+    "resposta_correta": { "type": "string", "minLength": 1 },
+    "resposta_referencia": { "type": "string", "minLength": 1 },
+    "metadados": { "type": "object" }
+  }
+}

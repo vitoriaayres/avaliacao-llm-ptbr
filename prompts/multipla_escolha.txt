@@ -1,0 +1,6 @@
+{texto_base}{enunciado}
+
+{alternativas}
+
+Escolha a alternativa correta. Você pode raciocinar antes, mas termine a resposta com uma linha exatamente neste formato:
+Resposta: <letra>

@@ -1,0 +1,46 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "avaliacao-llm-ptbr"
+version = "0.1.0"
+description = "Benchmark aberto de LLMs em português brasileiro"
+requires-python = ">=3.11"
+license = "MIT"
+dependencies = [
+    "litellm>=1.50",
+    "pyyaml>=6.0",
+    "python-dotenv>=1.0",
+    "jsonschema>=4.22",
+    "pandas>=2.2",
+    "pyarrow>=16.0",
+    "numpy>=1.26",
+    "typer>=0.12",
+]
+
+[project.optional-dependencies]
+painel = ["streamlit>=1.38", "altair>=5.3"]
+ferramentas = ["pypdf>=5.0"]
+dev = ["pytest>=8.2", "ruff>=0.6"]
+
+[project.scripts]
+avaliador = "avaliador.cli:app"
+
+[tool.setuptools.packages.find]
+include = ["avaliador*"]
+
+[tool.pytest.ini_options]
+testpaths = ["testes"]
+addopts = "--import-mode=importlib"
+
+[tool.ruff]
+line-length = 100
+target-version = "py311"
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF"]
+ignore = ["RUF001", "RUF002", "RUF003"]  # aspas e travessões tipográficos são português válido
+
+[tool.ruff.lint.per-file-ignores]
+"testes/ferramentas/test_enem.py" = ["E501"]  # recortes de PDF reais, com linhas longas

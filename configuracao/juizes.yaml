@@ -1,0 +1,6 @@
+# Modelos usados como juízes nas respostas abertas e redações (Parte 7).
+juizes:
+  - id: groq/openai/gpt-oss-120b
+    nome: GPT-OSS 120B (juiz)
+    parametros:
+      max_tokens: 4096

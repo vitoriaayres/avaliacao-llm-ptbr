@@ -34,7 +34,7 @@ Detalhes e limitações em [METODOLOGIA.md](METODOLOGIA.md).
 ## Como rodar
 
 ```bash
-git clone https://github.com/SEU_USUARIO/avaliacao-llm-ptbr.git
+git clone https://github.com/vitoriaayres/avaliacao-llm-ptbr.git
 cd avaliacao-llm-ptbr
 python -m venv .venv && source .venv/bin/activate   # Windows: .venv\Scripts\Activate.ps1
 pip install -e ".[dev,ferramentas,painel]"
